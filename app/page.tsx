@@ -18,11 +18,23 @@ export default async function HomePage() {
   const featuredPosts = blogPosts.slice(0, 3)
   const featuredReviews = reviews.slice(0, 3)
 
+  // Get hero image from first collection
+  const heroImage = collections[0]?.metadata?.hero_image?.imgix_url
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] bg-gradient-to-br from-primary to-primary/80 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative h-[600px] bg-gradient-to-br from-primary to-primary/80 text-white overflow-hidden">
+        {/* Background Image */}
+        {heroImage && (
+          <img
+            src={`${heroImage}?w=2000&h=1200&fit=crop&auto=format,compress`}
+            alt="Hero background"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
+        {/* Black Opacity Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
