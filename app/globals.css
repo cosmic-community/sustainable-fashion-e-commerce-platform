@@ -22,3 +22,38 @@
     text-wrap: balance;
   }
 }
+
+/* Enhanced prose styling for blog content */
+@layer components {
+  .prose {
+    @apply text-gray-900;
+  }
+  
+  .prose a {
+    @apply text-primary font-semibold underline hover:text-primary/80 transition-colors;
+  }
+  
+  .prose strong {
+    @apply text-gray-900 font-semibold;
+  }
+  
+  .prose h2 {
+    @apply text-3xl font-bold text-gray-900 mt-8 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-semibold text-gray-900 mt-6 mb-3;
+  }
+  
+  .prose p {
+    @apply text-gray-700 leading-relaxed my-5;
+  }
+  
+  .prose ul {
+    @apply list-disc pl-6 my-5 space-y-2;
+  }
+  
+  .prose li {
+    @apply text-gray-700;
+  }
+}
